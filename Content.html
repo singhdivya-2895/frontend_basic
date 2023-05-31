@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Learning</title>
+</head>
+
+<body>
+    <script>
+        var calculateCount = 0;
+        function clickCount() {
+            calculateCount++;
+            if(calculateCount < 10){                
+                document.getElementById("divi").className = "yellow";
+            }
+            else if(calculateCount >= 10 && calculateCount < 20){                
+                document.getElementById("divi").className = "orange";
+            }
+            else{                
+                document.getElementById("divi").className = "green";
+            }
+            document.getElementById("divi").innerHTML = `<b>${calculateCount} click</b>`;
+        }
+
+    </script>
+    <style>
+        .button {
+            background-color: pink;
+            font-size: 16px;
+            width: 90px;
+            height: 50px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        #divi {
+            border: 2px solid black;
+            color: black;
+            width: 50px;
+            height: 50px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .yellow{
+            background-color: yellow;
+        }
+
+        .orange{
+            background-color: orange;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        div.main {
+            background-color: paleturquoise;
+            width: 175px;
+            height: auto;
+            border: 3px solid black;
+            padding: 50px;
+            border-radius: 4px;
+        }
+    </style>
+
+    <div class="main">
+        <h2 style="color:red;"><b>Clicked Counts</b></h2>
+        <button onclick="clickCount()" class="button"><b>CLICK</b></button><br><br>
+        <div id="divi" class="yellow"><b>0 Click</b></div>
+    </div>
+
+</body>
+
+</html>

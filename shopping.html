@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h2 style ="color: deeppink;">Shopping Cart</h2>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+    function myfunction() {
+        var newItemValue = document.getElementById("shopping").value;
+        if (newItemValue != "") {
+            // Create a new list item element i.e. li
+            var newListItem = document.createElement("li");
+            // Set the text content of the list item
+            newListItem.textContent = newItemValue;
+            // Assuming you have an unordered list element with the id "itemsList"
+            var myList = document.getElementById("itemsList");
+            // Append the new item to the unordered list
+            myList.appendChild(newListItem);
+            document.getElementById("shopping").value = "";
+        }
+    }
+</script>
+<body>
+    <style>
+        #input-group{
+            width: 50px;
+            background-color: aqua;
+        }
+        .shop{
+            background-color: rgb(228, 241, 39);
+            width: 250px;
+            height:auto;
+            border: 5px solid black;
+            margin: 5px;
+        }
+        
+   </style>
+    <form>
+        <div class="input-group" >
+            <input class="form-control" aria-label="Amount (rounded to the nearest dollar)" type="text" id="shopping"
+                placeholder=" Enter your item......">
+            <span class="input-group-addon" onclick="myfunction()"><i class="fa fa-plus"></i></span>
+        </div>
+    </form><br>
+     
+    <div class ="shop">
+        <p style = "color: darkmagenta">This is my Shopping List</p>
+        <ul id="itemsList">
+        </ul>
+    </div>
+</body>
+
+</html>

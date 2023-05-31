@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .invalidString {
+        background-color: red !important;
+    }
+</style>
+<script>
+    function myFunction() {
+        document.getElementById('resultDiv').innerHTML = "";
+        var inputComponent = document.getElementById('inputString');
+        var button = document.getElementById('btnSave');
+        var currentValue = inputComponent.value;
+        var regex = new RegExp(/^[A-Za-z\s]*$/);
+        if (!regex.test(currentValue)) {
+            inputComponent.classList.add("invalidString");
+            button.disabled = true;
+        }
+        else {
+            inputComponent.classList.remove("invalidString");
+            button.disabled = false;
+        }
+    }
+    function savetheInputString() {
+        var currentValue = document.getElementById('inputString').value;
+        document.getElementById('resultDiv').innerHTML = `<strong> ${currentValue} </strong>, is the final value`;
+    }
+</script>
+<body>
+    <div class="alert alert-success" id="resultDiv">        
+    </div>
+    <h3>Check for a Valid String</h3>
+    <div>
+        <input class="form-control" type="text" id="inputString" onkeyup="myFunction()" placeholder="Enter a string...">
+    </div>
+    <div>
+        <button onclick="savetheInputString()" id="btnSave"><b>Save</b></button>
+    </div>
+</body>
+
+</html>

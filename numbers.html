@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <h3 style=color:purple>Even Odd</h3>
+</head>
+
+<body>
+    <script>
+       
+        function Calculate() {
+            var inputText = document.getElementById("numbertextBox").value;
+            if ( inputText % 2 == 0) {
+                document.getElementById("divi").innerHTML = `<b> Even  </b>`;
+                document.getElementById("divi").className = "even";
+            }
+            else {
+                document.getElementById("divi").innerHTML= `<b> Odd </b>`;
+                document.getElementById("divi").className = "odd";
+                // document.getElementById("divi").
+            }
+        }
+    </script>
+    <style>
+        #nametextBox {
+            background-color: skyblue;
+            font-family: "Times New Roman", Times, serif;
+            font-style: oblique;
+            color: maroon;
+            border-radius: 2px;
+            border-style: dashed;
+            border-color: maroon;
+            font-size: 15px;
+            padding-left: 2px;
+        }
+
+        /* .button{
+        background-color: skyblue;
+        border-color:maroon;
+        font-style: oblique;
+        border-style: dashed;
+        text-align: center;
+        padding-left: 2px;
+       } */
+        #divi {
+            border-style: dotted;
+            padding-left: 2px;
+
+        }
+
+        div.main {
+
+            width: 200px;
+            height: 150;
+            border: 3px solid rgb(255, 28, 28);
+            border-radius: 4px;
+            background-color: palegoldenrod;
+        }
+
+        .even {
+            background-color: lawngreen;
+        }
+
+        .odd {
+            background-color: yellow;
+        }
+    </style>
+    <div class="main">
+        <label for="nametextBox"><b>EnterNumber:</b></label><br>
+        <input type="textbox" id="numbertextBox" placeholder="Number"><br><br>
+
+        <button onclick="Calculate()" class="button"><b>CHECK</b></button><br><br>
+
+        <div id="divi">Your Number Is:-</div>
+    </div>
+</body>
+
+</html>

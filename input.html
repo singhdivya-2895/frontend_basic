@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title >Learning</title>
+    
+</head>
+<script>
+function submit(){
+    var inputText = `${document.getElementById("nametextBox").value} ${document.getElementById("lastNameTextBox").value}`;
+    alert(`Hello \n${inputText}`);
+}
+</script>
+<style>   
+.form{
+  background-color: burlywood;
+  width: 240px;
+  border: 3px solid black;
+  padding: 50px;
+}
+.blue{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#nametextBox{
+  border: 2px solid black;
+  border-radius: 4px;
+}
+#lastNameTextBox{
+  border: 2px solid black;
+  border-radius: 4px;
+}
+#country{
+    border: 2px solid black;
+  border-radius: 4px;  
+}
+
+</style>
+<body>
+    <h4 style ="color: blueviolet;"><b>Employee Details</b></h4>
+
+    <div class="form">
+       
+        <label for="nametextBox" class="blue"><b>Name:</b></label><br>
+        <input type="textbox" id="nametextBox" placeholder="Name" class="blue"><br><br>
+
+        <label for="lastNameTextBox"><b>LastName:</b></label><br>
+        <input type="textbox" id="lastNameTextBox" placeholder="Last Name"><br><br>
+
+        <label for="country"><b>Country :</b></label>
+        <select name="country" id="country">
+            <option id="disabledOption" value="disabled selected"></option>
+            <option value="Australia">Australia</option>
+            <option value="India">India</option>
+            <option value="US">US</option>
+            <option value="Nepal">Nepal</option>
+            <option value="China">China</option>
+        </select><br><br>
+
+        <div1 class="button-container">
+            <button onclick="submit()"><b>Save</b></button>
+            <button><b>Reset</b></button>
+        </div>
+    </div>
+</body>
+</html>

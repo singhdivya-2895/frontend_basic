@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    function myfunction() {
+        var opt = document.getElementById('gender').value;
+        document.getElementById("male").classList.add('hidden');
+        document.getElementById("female").classList.add('hidden');
+        switch (opt) {
+            case "male":
+                document.getElementById("male").classList.remove('hidden');
+                break;
+            case "female":
+                document.getElementById("female").classList.remove('hidden');
+                break;
+            default:
+                break;
+        }
+    }
+
+</script>
+
+<body>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <form>
+        <div class="form-group">
+            <label for="Select Gender"><b>Select Gender :</b></label>
+            <select onchange="myfunction()" id="gender" class="form-control">
+                <option id="disabledOption" value="disabled selected"></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div id="male" class="hidden form-group">
+            <label for="Father Name"><b>Father Name:</b></label>
+            <input type="textbox" id="father" placeholder="Father Name" class="form-control"><br>
+
+            <label for="Wife Name:"><b>Wife Name:</b></label>
+            <input type="textbox" id="wife" placeholder="Wife Name" class="form-control">
+        </div>
+        <div id="female" class="hidden form-group">
+            <label for="Mother Name"><b>Mother Name:</b></label>
+            <input type="textbox" id="mother" placeholder="Mother Name" class="form-control"><br>
+
+            <label for="Husband Name"><b> Husband Name:</b></label>
+            <input type="textbox" id="husband" placeholder="Husband Name" class="form-control">
+        </div>
+
+    </form>
+</body>
+
+</html>
